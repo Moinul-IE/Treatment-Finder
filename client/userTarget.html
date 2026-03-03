@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Image and Buttons Layout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+</head>
+<body style="background-color:#cbcbcb;">
+    <div class="top-bar">
+        <div class="search-info">
+            <a href="#"> <i class="fas fa-search"></i>
+                <span>Find your Nearest doctor</span></a>
+        </div>
+    </div>
+
+    <nav class="nav-bar">
+        <div class="logo">
+            <span class="highlight">Treatment</span><span class="normal">-Finder</span>
+        </div>
+
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+
+        <div class="nav-collapse">
+            <div class="nav-links">
+                <a href="./home.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Doctor</a>
+                <a href="./blog.html" class="nav-link">Blog</a>
+                <a href="./contact.html" class="nav-link">Contact Us</a>
+                <a href="./about.html" class="nav-link">About Us</a>
+            </div>
+
+            <div class="search-box searchbns">
+                <form action="#">
+                    <input type="text" placeholder="Search doctors or specialists">
+                </form>
+            </div>
+        </div>
+
+        <button class="user-button" onclick="navigateToPage()">
+            <i class="fas fa-user"></i>
+        </button>
+    </nav>
+
+    <button>back</button>
+   <div class="logodiv">
+    <img src="./image/logo.png" alt="">
+
+     
+    
+   </div>
+   <div>
+    <h1><span class="highlight">Treatment</span><span class="normal">-Finder</span></h1>
+
+ </div>
+
+   <div class="logobtn">
+    
+    <button class="doctor">
+        <i class="fas fa-user-md"> Doctor</i>
+    </button>
+    <h5><span><a href="">Don't have an account?Registration here</a></span></h5>
+
+    
+    <button>
+        <i class="fas fa-user"> Patient</i> 
+    </button>
+    <h5><span><a href="">Don't have an account?Registration here</a></span></h5>
+
+   </div><br><br>
+
+   <!-- footer
+     -->
+
+     <!-- footer -->
+     <footer class="footer">
+        <div class="container footer-container">
+            <div class="grid">
+                <div>
+                    <h3 class="title">Link</h3>
+                    <ul>
+                        <li class="item"><a href="./home.html"><i class="fas fa-chevron-right icon"></i>home</li></a>
+                        <li class="item"><a href="./about.html"><i class="fas fa-chevron-right icon"></i>about</li></a>
+                        <li class="item"><a href="#doctor"><i class="fas fa-chevron-right icon"></i>doctors</li></a>
+                        <li class="item"><a href="./blog.html"><i class="fas fa-chevron-right icon"></i>blogs</li></a>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="title">Other page</h3>
+                    <ul>
+                        <li class="item"><a href=""><i class="fas fa-chevron-right icon"></i>Specialist</li></a>
+                        <li class="item"><a href=""><i class="fas fa-chevron-right icon"></i>Hospital</li></a>
+                        <li class="item"><a href=""><i class="fas fa-chevron-right icon"></i>City</li></a>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="title">contact info</h3>
+                    <ul>
+                        <li class="item"><a href=""><i class="fas fa-envelope icon"></i>@Treatment-Finder</li></a>
+                        <li class="item"><a href=""><i class="fas fa-chevron-right icon"></i>contact</li></a>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="title">follow us</h3>
+                    <ul class="social">
+                      <li class="item"><a href=""><i class="fab fa-facebook icon"></i>facebook</li></a>
+                      <li class="item"><a href=""><i class="fab fa-linkedin icon"></i>linkedin</li></a>
+                      <li class="item"><a href=""><i class="fab fa-pinterest icon"></i>pinterest</li></a>
+                      <li class="item"><a href=""><i class="fab fa-instagram icon"></i>instagram</li></a>
+                      <li class="item"><a href=""><i class="fab fa-tiktok icon"></i>tiktok</li>
+                      </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="text">&copy; 2025| <span class="highlight">Treatment-Finder</span> | All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+   <script src="./script.js"></script>
+   <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>       
+</body>
+</html>
