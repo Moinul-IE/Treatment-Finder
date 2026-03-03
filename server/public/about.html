@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment-finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+</head>
+<body>
+
+    <!-- nav bar -->
+    <div class="top-bar">
+        <div class="search-info">
+            <a href="/search"> <i class="fas fa-search"></i>
+                <span>Find your Nearest doctor</span></a>
+           
+        </div>
+    </div>
+    <div class="nav-bar">
+        <div class="logo">
+            <span class="highlight">Treatment</span><span class="normal">-Finder</span>
+        </div>
+        <div class="nav-links">
+            <a href="./home.html" class="nav-link">Home</a>
+            <a href="/Doctor" class="nav-link">Doctor</a>
+            <a href="./blog.html" class="nav-link">Blog</a>
+            <a href="./contact.html" class="nav-link">Contact Us</a>
+            <a href="./about.html" class="nav-link">About Us</a>
+        </div>
+        <div class="search-box searchbns">
+            <form method="GET" action="/searchbox">
+                <input type="text" id="searchInput" name="query" placeholder="Search doctors or specialists" onkeyup="searchDoctors()">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <button class="user-button" onclick="navigateToPage()">
+            <i class="fas fa-user"></i> 
+        </button>
+         
+    </div>
+
+<!-- about div
+  -->
+
+  <div class="container aboutsec">
+    <h1 class="title abouthead">
+     ABOUT
+     <span class="title-highlight">
+      US
+     </span>
+    </h1>
+    <div class="content aboutcon2">
+     <div class="image-container imgbox">
+      <img alt="Illustration of three doctors standing together" class="image" height="300" src="https://storage.googleapis.com/a1aa/image/Gh3nW2CNEOpSjK_sAYcWbv2dvSfNrZmuXJVGBBovWl0.jpg" width="300"/>
+     </div>
+     <div class="text-container ">
+      <h2 class="subtitle abouthead2">
+       Welcome To Treatment-Finder
+      </h2>
+      <p class="description aboutpera1">
+       <b>Treatment-Finder</b> this is a service website through which you can contact your nearest specialist doctors and find out which clinic they will see patients at when. If you want you can directly contact the clinic number. Contact numbers of all clinics will be given here. Each doctor will also be given a separate number for the appointment through which you can call at the time of your convenience and fix the appointment. The main purpose of this
+      </p>
+     </div>
+    </div>
+   </div>
+
+
+    <!-- footer -->
+    
+   <!-- footer -->
+   <footer class="footer">
+    <div class="container footer-container">
+        <div class="grid">
+            <div>
+                <h3 class="title">Link</h3>
+                <ul>
+                    <li class="item"><a href="./home.html"><i class="fas fa-chevron-right icon"></i>home</li></a>
+                    <li class="item"><a href="./about.html"><i class="fas fa-chevron-right icon"></i>about</li></a>
+                    <li class="item"><a href="/Doctor"><i class="fas fa-chevron-right icon"></i>doctors</li></a>
+                    <li class="item"><a href="./blog.html"><i class="fas fa-chevron-right icon"></i>blogs</li></a>
+                </ul>
+            </div>
+            <div>
+                <h3 class="title">Other page</h3>
+                <ul>
+                    <li class="item"><a href="/Doctor"><i class="fas fa-chevron-right icon"></i>Specialist</li></a>
+                    <li class="item"><a href=""><i class="fas fa-chevron-right icon"></i>Hospital</li></a>
+                    <li class="item"><a href="./allcity.html"><i class="fas fa-chevron-right icon"></i>City</li></a>
+                </ul>
+            </div>
+            <div>
+                <h3 class="title">contact info</h3>
+                <ul>
+                    <li class="item"><a href=""><i class="fas fa-envelope icon"></i>@Treatment-Finder</li></a>
+                    <li class="item"><a href="./contact.html"><i class="fas fa-chevron-right icon"></i>contact</li></a>
+                </ul>
+            </div>
+            <div>
+                <h3 class="title">follow us</h3>
+                <ul class="social">
+                  <li class="item"><a href=""><i class="fab fa-facebook icon"></i>facebook</li></a>
+                  <li class="item"><a href=""><i class="fab fa-linkedin icon"></i>linkedin</li></a>
+                  <li class="item"><a href=""><i class="fab fa-pinterest icon"></i>pinterest</li></a>
+                  <li class="item"><a href=""><i class="fab fa-instagram icon"></i>instagram</li></a>
+                  <li class="item"><a href=""><i class="fab fa-tiktok icon"></i>tiktok</li>
+                  </a>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="text">&copy; 2025| <span class="highlight">Treatment-Finder</span> | All rights reserved</p>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="./script.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>       
+
+</body>
+</html>

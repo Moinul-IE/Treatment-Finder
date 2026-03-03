@@ -1,0 +1,38 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+
+<div class="container doctor-list">
+    <div class="div-h1"><h1 class="text-center mb-4">All Doctors</h1>
+    </div>
+    <div class="row">
+        <% for(let listing of allListing) { %>
+            <div class="col-md-4">
+                <div class="doctor-card">
+                    <img src="<%= listing.image ? listing.image : '/image/defaultimg.jpg' %>" alt="<%= listing.name %>" class="doctor-imgage" style="width: 100%; height: auto;">
+                    <h5 class="doctor-name"><%= listing.name %></h5>
+                    <p class="doctor-description"><%= listing.description %></p>
+
+                    <p><strong>Specialist:</strong> <%= listing.specialist %></p>
+                    <p><strong>Division:</strong> <%= listing.division %></p>
+
+                   
+                    <p><strong>Location:</strong> <%= listing.location %></p>
+
+                    <p>
+                        <strong>Booking Amount:</strong> 
+                        <span class="text-success">BDT <%= listing.booking_amount?.new || 0 %></span> (New) | 
+                        <span class="text-muted">BDT <%= listing.booking_amount?.old || 0 %></span> (Old)
+                    </p>
+                    <p><strong>Booking:</strong> <%= listing.booking %></p>
+                    <form method="get" action="/Doctor/<%= listing._id %>">
+                        <button type="submit" class="button-view">View</button>
+                    </form>
+                </div>
+            </div>
+           
+        <% } %>
+    </div>
+</div>
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>

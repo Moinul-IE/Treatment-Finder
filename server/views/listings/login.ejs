@@ -1,0 +1,51 @@
+
+
+
+
+<% layout("layouts/boilerplate.ejs") %>
+<body style="background-color:#cbcbcb;">
+   
+    <div class="text-center mb-4">
+        <img src="./image/logo.png" alt="Logo" class="img-fluid">
+    </div>
+    <div class="text-center mb-4">
+        <h1><span class="highlight">Treatment</span><span class="normal">-Finder</span></h1>
+    </div>
+
+
+     <!-- Login Form -->
+     <h2 class="text-center">Login</h2>
+
+     <div class="container loginbox" style="margin-top: 20px;">
+    
+
+        
+        <form method="POST" action="/login" class="border p-4 rounded bg-light">
+            <div class="form-group logbox">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group logbox">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe"><label class="form-check-label" for="rememberMe">Remember Me</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            
+            <p class="text-center mt-3">
+                Not registered? <a href="/registerDoctor" class="text-primary">Create an account</a>
+            </p>
+            
+            
+        </form>
+    </div>
+    <br><br>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+   
+</body>

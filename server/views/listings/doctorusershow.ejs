@@ -1,0 +1,39 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<body>
+
+
+<div class="container doctor-detail">
+    <div class="logodiv">
+        <img src="/image/logo.png" alt="Treatment-Finder image">
+       </div>
+       <div>
+        <h1><span class="highlight">Treatment</span><span class="normal">-Finder</span></h1>
+    
+     </div>
+    <div class="doctor-card perdoctor" style="background-color: aqua;">
+        <img src="<%= listing.image ? listing.image : '/image/defaultimg.jpg' %>" alt="<%= listing.name %>" class="doctor-image" style="width: 100%; height: auto;">
+        <h1 class="doctor-name text-center mb-4"><%= listing.name %></h1>
+        <p class="doctor-description"><%= listing.description %></p>
+        <p><strong>Specialist:</strong> <%= listing.specialist %></p>
+        <p><strong>Division:</strong> <%= listing.division %></p>
+
+        <p><strong>Location:</strong> <%= listing.location %></p>
+        <p>
+            <strong>Booking Amount:</strong> 
+            <span class="text-success">BDT <%= listing.booking_amount?.new || 0 %></span> (New) | 
+            <span class="text-muted">BDT <%= listing.booking_amount?.old || 0 %></span> (Old)
+        </p>
+        <p><strong>Booking:</strong> <%= listing.booking %></p>
+        <a href="/Doctor"><!-- Link to the home page -->
+            <button type="button" class="button-view">
+                 Back
+            </button>
+        </a>
+        
+    </div>
+</div>
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</body>

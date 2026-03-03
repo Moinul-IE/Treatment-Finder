@@ -1,0 +1,48 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"> 
+    <style>
+        .card {
+            margin: 20px;
+        }
+    </style>
+</head>  -->
+<% layout("layouts/boilerplate.ejs") %>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Search Results</h1>
+        <div class="row">
+            <% if (results.length > 0) { %>
+                <% results.forEach(doctor => { %>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="<%= doctor.image %>" class="card-img-top" alt="<%= doctor.name %>">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= doctor.name %></h5>
+                                <p class="card-text"><strong>Specialist:</strong> <%= doctor.specialist %></p>
+                                <p class="card-text"><strong>Description:</strong> <%= doctor.description %></p>
+                                <p class="card-text"><strong>Division:</strong> <%= doctor.division %></p>
+                                <p class="card-text"><strong>Location:</strong> <%= doctor.location %></p>
+                                <p class="card-text"><strong>Booking Amount:</strong> New: <%= doctor.booking_amount.new %>, Old: <%= doctor.booking_amount.old %></p>
+                                <a href="/Doctor/<%= doctor._id %>" class="btn btn-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <div class="col-12">
+                    <div class="alert alert-warning" role="alert">
+                        No doctors found matching your search.
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        <a href="/home" class="btn btn-secondary mt-4">Back to Home</a>
+    </div><br><br>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script> <!-- Include Bootstrap JS -->
+</body>
+</html>

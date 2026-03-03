@@ -1,0 +1,292 @@
+.doctor-list {
+    margin: 20px;
+}
+.doctor-card {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    transition: transform 0.2s;
+}
+.doctor-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.doctor-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.doctor-description {
+    color: #6c757d;
+}
+
+.doctor-image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* For circular images */
+}
+
+/* Basic button styles */
+.button-view {
+    background-color: white; /* Bootstrap primary color */
+    color: saddlebrown; /* Text color */
+    padding: 10px 20px; /* Vertical and horizontal padding */
+    border: 1px solid saddlebrown; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold;
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease;
+    box-shadow: 2px 2px 2px saddlebrown;/* Smooth transition for hover effect */
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #0056b3;
+    color: black; /* Darker shade on hover */
+    border-color: black;
+    box-shadow: 2px 2px 2px blue;/* Smooth transition for hover effect */
+
+}
+
+.div-h1 {
+    background-color: transparent; /* Light background color */
+    padding: 20px; /* Add padding inside the div */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid saddlebrown;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px auto; /* Center the div and add vertical margin */
+    max-width: 800px; /* Set a maximum width for the div */
+    text-align: center; /* Center text inside the div */
+}
+
+.perdoctor{
+    width: 700px;
+    height: auto;
+    margin: auto;
+    border: 1px solid saddlebrown;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.search-container {
+    background-color: lightgray;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    max-width: 500px;
+    margin: 20px auto; /* Center the container */
+}
+
+/* Heading styles */
+.search-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Label styles */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input and select styles */
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Input focus styles */
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button styles */
+.btsearch {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    margin: auto;
+    
+}
+
+/* Button hover styles */
+.btsearch:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* searchResultcss */
+
+.container-result{
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+.cth2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Text Styles */
+.text-center {
+    text-align: center;
+}
+
+.text-danger {
+    color: #dc3545; /* Bootstrap danger color */
+}
+
+.text-success {
+    color: #28a745; /* Bootstrap success color */
+}
+
+.text-muted {
+    color: #6c757d; /* Bootstrap muted color */
+}
+
+/* Card Styles */
+.card-result {
+    background-color: #ffffff;
+    border: none; /* Remove border for a cleaner look */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+}
+
+.card-result:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.card-result-img-top {
+    border-top-left-radius: 10px; /* Rounded corners for the image */
+    border-top-right-radius: 10px;
+}
+
+/* Card Body Styles */
+.card-body-result {
+    padding: 20px; /* Increased padding for better spacing */
+}
+
+.card-title-result {
+    font-size: 1.2rem; /* Larger title */
+    margin-bottom: 10px;
+    color: #333; /* Darker color for better readability */
+    text-align: center;
+}
+
+.card-text-result {
+    margin-bottom: 15px;
+    text-align: center; /* Spacing between text elements */
+}
+
+/* Button Styles */
+.btn-result {
+    display: inline-block;
+    padding: 8px 8px;
+    font-size: 0.7rem;
+    color: #ffffff;
+    background-color: #007bff; /* Bootstrap primary color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.5s; /* Smooth transition */
+}
+
+.btn-result:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+    transform: scale(1.09); /* Slightly enlarge button on hover */
+}
+
+/* registration style */
+
+
+.register-box{
+    margin-bottom: 20px;
+}
+
+.regisstackter-row{
+    display: flex;
+}
+.register-row label{
+    text-align: left; /* Align text to the left */
+    display: block;   /* Make the label a block element */
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+     /* Optional: Add some space below the label */
+}
+
+.account{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vertical-stack {
+    display: flex;          /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 1rem;   /* Add some space below each field */
+}
+.vertical-stack input {
+  width: 500px;
+}
+.label-left {
+    text-align: left;      /* Align label text to the left */
+    margin-bottom: 0.5rem;
+    margin-left: 20px;
+    font-weight: bold; /* Space between label and input */
+}
+/* Responsive Styles */
+
+
+
+/* login box */
+
+.loginbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logbox input{
+    width: 500px;
+}
+
+
+/* Responsive Styles */
+@media (min-width: 576px) {
+    .row-cols-md-3 .col {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .row-cols-1 .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+

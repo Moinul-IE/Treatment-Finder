@@ -1,0 +1,38 @@
+<div class="top-bar">
+    <div class="search-info">
+        <a href="/search"> <i class="fas fa-search"></i>
+            <span>Find your Nearest doctor</span></a>
+    </div>
+</div>
+
+<nav class="nav-bar">
+    <div class="logo">
+        <span class="highlight">Treatment</span><span class="normal">-Finder</span>
+    </div>
+
+    <!-- Hamburger toggle for small screens -->
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+
+    <div class="nav-collapse">
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/Doctor" class="nav-link">Doctor</a>
+            <a href="/blog" class="nav-link">Blog</a>
+            <a href="/contact" class="nav-link">Contact Us</a>
+            <a href="/about" class="nav-link">About Us</a>
+        </div>
+
+        <div class="search-box searchbns">
+            <form method="GET" action="/searchbox">
+                <input type="text" id="searchInput" name="query" placeholder="Search doctors or specialists" onkeyup="searchDoctors()">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <button class="user-button" onclick="navigateToPage()">
+        <i class="fas fa-user"></i>
+    </button>
+</nav>

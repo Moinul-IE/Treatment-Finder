@@ -1,0 +1,213 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<body>
+    <div class="search-container">
+        <h2>Search for Your Nearest Doctor</h2>
+        <form id="search-form"  action="/search/search-doctors" method="POST">
+            <!-- Division Selection -->
+            <div class="form-group">
+                <label for="division">division:</label>
+                <select id="division" name="division" required onchange="filterHospitals()">
+                    <option value="">Select Your Division</option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Chittagong">Chittagong</option>
+                    <option value="Mymensingh">Mymensingh</option>
+                    <option value="Rangpur">Rangpur</option>
+                    <option value="Khulna">Khulna</option>
+                    <option value="Rajshahi">Rajshahi</option>
+                    <option value="Barisal">Barisal</option>
+                    <option value="Sylhet">Sylhet</option>
+                </select>
+            </div>
+
+            <!-- Hospital Selection -->
+            <div class="form-group">
+                <label for="hospital">hospital:</label>
+                <select id="hospital" name="hospital" required>
+                    <option value="">Select Hospital</option>
+                    <option value="Dhaka, City Hospital">Dhaka, City Hospital</option>
+                    <option value="Chittagong, Children's Hospital">Chittagong, Children's Hospital</option>
+                    <option value="Khulna, Heart Care Center">Khulna, Heart Care Center</option>
+                    <option value="Rajshahi, Skin Clinic">Rajshahi, Skin Clinic</option>
+                    <option value="Sylhet, Bone and Joint Hospital">Sylhet, Bone and Joint Hospital</option>
+                    <option value="Barisal, Brain Health Center">Barisal, Brain Health Center</option>
+                    <option value="Narayanganj, Diabetes Care Clinic">Narayanganj, Diabetes Care Clinic</option>
+                    <option value="Comilla, Digestive Health Center">Comilla, Digestive Health Center</option>
+                    <option value="Mymensingh, Eye Hospital">Mymensingh, Eye Hospital</option>
+                    <option value="Pabna, Urology Clinic">Pabna, Urology Clinic</option>
+                    <option value="Brahmanbaria, Mental Health Center">Brahmanbaria, Mental Health Center</option>
+                    <option value="Narsingdi, Cancer Care Center">Narsingdi, Cancer Care Center</option>
+                    <option value="Dhaka, General Hospital">Dhaka, General Hospital</option>
+<option value="Chittagong, Medical College Hospital">Chittagong, Medical College Hospital</option>
+<option value="Khulna, City Medical Center">Khulna, City Medical Center</option>
+<option value="Rajshahi, Community Hospital">Rajshahi, Community Hospital</option>
+<option value="Sylhet, Specialist Hospital">Sylhet, Specialist Hospital</option>
+<option value="Barisal, Health Care Hospital">Barisal, Health Care Hospital</option>
+<option value="Narayanganj, Family Hospital">Narayanganj, Family Hospital</option>
+<option value="Comilla, City Hospital">Comilla, City Hospital</option>
+<option value="Mymensingh, Eye Care Hospital">Mymensingh, Eye Care Hospital</option>
+<option value="Pabna, Heart Hospital">Pabna, Heart Hospital</option>
+<option value="Brahmanbaria, Mental Health Hospital">Brahmanbaria, Mental Health Hospital</option>
+<option value="Narsingdi, Cancer Hospital">Narsingdi, Cancer Hospital</option>
+<option value="Cox's Bazar, Sea View Hospital">Cox's Bazar, Sea View Hospital</option>
+<option value="Jessore, General Hospital">Jessore, General Hospital</option>
+<option value="Tangail, District Hospital">Tangail, District Hospital</option>
+<option value="Panchagarh, Community Health Center">Panchagarh, Community Health Center</option>
+<option value="Noakhali, Medical College Hospital">Noakhali, Medical College Hospital</option>
+<option value="Satkhira, Sadar Hospital">Satkhira, Sadar Hospital</option>
+<option value="Rangpur, Divisional Hospital">Rangpur, Divisional Hospital</option>
+<option value="Bogra, Cancer Care Hospital">Bogra, Cancer Care Hospital</option>
+<option value="Netrakona, General Hospital">Netrakona, General Hospital</option>
+<option value="Kishoreganj, Health Complex">Kishoreganj, Health Complex</option>
+<option value="Moulvibazar, Sadar Hospital">Moulvibazar, Sadar Hospital</option>
+<option value="Jamalpur, General Hospital">Jamalpur, General Hospital</option>
+<option value="Sherpur, District Hospital">Sherpur, District Hospital</option>
+<option value="Chuadanga, Medical College Hospital">Chuadanga, Medical College Hospital</option>
+<option value="Lakshmipur, Health Care Hospital">Lakshmipur, Health Care Hospital</option>
+<option value="Bhola, General Hospital">Bhola, General Hospital</option>
+<option value="Patuakhali, Medical College Hospital">Patuakhali, Medical College Hospital</option>
+<option value="Cumilla, Modern Hospital">Cumilla, Modern Hospital</option>
+<option value="Feni, Sadar Hospital">Feni, Sadar Hospital</option>
+<option value="Narsingdi, General Hospital">Narsingdi, General Hospital</option>
+<option value="Manikganj, District Hospital">Manikganj, District Hospital</option>
+<option value="Brahmanbaria, General Hospital">Brahmanbaria, General Hospital</option>
+<option value="Khulna, Medical College Hospital">Khulna, Medical College Hospital</option>
+<option value="Dhaka, Apollo Hospital">Dhaka, Apollo Hospital</option>
+<option value="Dhaka, Square Hospital">Dhaka, Square Hospital</option>
+<option value="Dhaka, United Hospital">Dhaka, United Hospital</option>
+<option value="Dhaka, Evercare Hospital">Dhaka, Evercare Hospital</option>
+<option value="Chittagong, Max Hospital">Chittagong, Max Hospital</option>
+<option value="Chittagong, Parkview Hospital">Chittagong, Parkview Hospital</option>
+<option value="Sylhet, MediCare Hospital">Sylhet, MediCare Hospital</option>
+<option value="Dhaka Medical College Hospital">Dhaka Medical College Hospital</option>
+<option value="Chittagong Medical College Hospital">Chittagong Medical College Hospital</option>
+<option value="Khulna Medical College Hospital">Khulna Medical College Hospital</option>
+<option value="Rajshahi Medical College Hospital">Rajshahi Medical College Hospital</option>
+<option value="Sylhet Osmani Medical College Hospital">Sylhet Osmani Medical College Hospital</option>
+<option value="Barisal Sher-e-Bangla Medical College Hospital">Barisal Sher-e-Bangla Medical College Hospital</option>
+<option value="Rangpur Medical College Hospital">Rangpur Medical College Hospital</option>
+<option value="Comilla Medical College Hospital">Comilla Medical College Hospital</option>
+<option value="Narayanganj General Hospital">Narayanganj General Hospital</option>
+<option value="Brahmanbaria General Hospital">Brahmanbaria General Hospital</option>
+<option value="Narsingdi General Hospital">Narsingdi General Hospital</option>
+<option value="Pabna General Hospital">Pabna General Hospital</option>
+<option value="Jamalpur General Hospital">Jamalpur General Hospital</option>
+<option value="Sherpur General Hospital">Sherpur General Hospital</option>
+<option value="Tangail General Hospital">Tangail General Hospital</option>
+<option value="Mymensingh Medical College Hospital">Mymensingh Medical College Hospital</option>
+<option value="Jessore General Hospital">Jessore General Hospital</option>
+<option value="Satkhira Sadar Hospital">Satkhira Sadar Hospital</option>
+<option value="Bogra Medical College Hospital">Bogra Medical College Hospital</option>
+<option value="Panchagarh General Hospital">Panchagarh General Hospital</option>
+<option value="Thakurgaon General Hospital">Thakurgaon General Hospital</option>
+<option value="Dinajpur Medical College Hospital">Dinajpur Medical College Hospital</option>
+<option value="Kishoreganj General Hospital">Kishoreganj General Hospital</option>
+<option value="Netrokona General Hospital">Netrokona General Hospital</option>
+<option value="Moulvibazar Sadar Hospital">Moulvibazar Sadar Hospital</option>
+<option value="Habiganj Sadar Hospital">Habiganj Sadar Hospital</option>
+<option value="Sunamganj Sadar Hospital">Sunamganj Sadar Hospital</option>
+<option value="Sylhet Sadar Hospital">Sylhet Sadar Hospital</option>
+<option value="Noakhali General Hospital">Noakhali General Hospital</option>
+<option value="Lakshmipur Sadar Hospital">Lakshmipur Sadar Hospital</option>
+<option value="Feni Sadar Hospital">Feni Sadar Hospital</option>
+<option value="Cumilla Medical College Hospital">Cumilla Medical College Hospital</option>
+<option value="Chandpur General Hospital">Chandpur General Hospital</option>
+<option value="Brahmanbaria Sadar Hospital">Brahmanbaria Sadar Hospital</option>
+<option value="Cox's Bazar Sadar Hospital">Cox's Bazar Sadar Hospital</option>
+<option value="Rangamati Sadar Hospital">Rangamati Sadar Hospital</option>
+<option value="Bandarban Sadar Hospital">Bandarban Sadar Hospital</option>
+<option value="Khagrachari Sadar Hospital">Khagrachari Sadar Hospital</option>
+<option value="Patuakhali General Hospital">Patuakhali General Hospital</option>
+<option value="Bhola General Hospital">Bhola General Hospital</option>
+<option value="Jhalokati Sadar Hospital">Jhalokati Sadar Hospital</option>
+<option value="Pirojpur Sadar Hospital">Pirojpur Sadar Hospital</option>
+<option value="Barisal Sadar Hospital">Barisal Sadar Hospital</option>
+<option value="Magura Sadar Hospital">Magura Sadar Hospital</option>
+<option value="Jhenaidah Sadar Hospital">Jhenaidah Sadar Hospital</option>
+<option value="Kushtia General Hospital">Kushtia General Hospital</option>
+<option value="Meherpur Sadar Hospital">Meherpur Sadar Hospital</option>
+<option value="Chuadanga Sadar Hospital">Chuadanga Sadar Hospital</option>
+<option value="Rajbari Sadar Hospital">Rajbari Sadar Hospital</option>
+<option value="Faridpur Medical College Hospital">Faridpur Medical College Hospital</option>
+<option value="Shariatpur Sadar Hospital">Shariatpur Sadar Hospital</option>
+<option value="Netrakona Sadar Hospital">Netrakona Sadar Hospital</option>
+<option value="Bagerhat Sadar Hospital">Bagerhat Sadar Hospital</option>
+                    <!-- Add more hospitals as needed -->
+                </select>
+                
+            </div>
+
+            <!-- Specialist Selection -->
+            <div class="form-group">
+                <label for="specialist">specialist:</label>
+                <select id="specialist" name="specialist" required>
+                    <option value="">Select Your Specialist</option>
+                    
+                    <option value="">Select Your Specialist </option>
+                    <option value="Allergist">Allergist</option>
+<option value="Anesthesiologist">Anesthesiologist</option>
+<option value="Cardiologist">Cardiologist</option>
+<option value="Cardiothoracic Surgeon">Cardiothoracic Surgeon</option>
+<option value="Clinical Psychologist">Clinical Psychologist</option>
+<option value="Dermatologist">Dermatologist</option>
+<option value="Endocrinologist">Endocrinologist</option>
+<option value="Family Physician">Family Physician</option>
+<option value="Gastroenterologist">Gastroenterologist</option>
+<option value="Geneticist">Geneticist</option>
+<option value="Geriatrician">Geriatrician</option>
+<option value="Gynecologist">Gynecologist</option>
+<option value="Hematologist">Hematologist</option>
+<option value="Infectious Disease Specialist">Infectious Disease Specialist</option>
+<option value="Internal Medicine Specialist">Internal Medicine Specialist</option>
+<option value="Medical Educator">Medical Educator</option>
+<option value="Nephrologist">Nephrologist</option>
+<option value="Neurologist">Neurologist</option>
+<option value="Nutritionist">Nutritionist</option>
+<option value="Obstetrician">Obstetrician</option>
+<option value="Oncologist">Oncologist</option>
+<option value="Ophthalmologist">Ophthalmologist</option>
+<option value="Orthopedic Surgeon">Orthopedic Surgeon</option>
+<option value="Otolaryngologist (ENT)">Otolaryngologist (ENT)</option>
+<option value="Pediatrician">Pediatrician</option>
+<option value="Physiatrist">Physiatrist</option>
+<option value="Plastic Surgeon">Plastic Surgeon</option>
+<option value="Psychiatrist">Psychiatrist</option>
+<option value="Pulmonologist">Pulmonologist</option>
+<option value="Radiologist">Radiologist</option>
+<option value="Reproductive Health Specialist">Reproductive Health Specialist</option>
+<option value="Rheumatologist">Rheumatologist</option>
+<option value="Sports Medicine Specialist">Sports Medicine Specialist</option>
+<option value="Surgeon">Surgeon</option>
+<option value="Urologist">Urologist</option>
+<option value="Vascular Surgeon">Vascular Surgeon</option>
+<option value="Public Health Specialist">Public Health Specialist</option>
+<option value="Emergency Medicine Specialist">Emergency Medicine Specialist</option>
+<option value="Occupational Medicine Specialist">Occupational Medicine Specialist</option>
+<option value="Tropical Medicine Specialist">Tropical Medicine Specialist</option>
+<option value="Disaster Medicine Specialist">Disaster Medicine Specialist</option>
+<option value="Pain Management Specialist">Pain Management Specialist</option>
+<option value="Sleep Medicine Specialist">Sleep Medicine Specialist</option>
+<option value="Clinical Pharmacologist">Clinical Pharmacologist</option>
+<option value="Health Policy Analyst">Health Policy Analyst</option>
+<option value="Medical Geneticist">Medical Geneticist</option>
+<option value="Neurosurgeon">Neurosurgeon</option>
+<option value="Palliative Care Specialist">Palliative Care Specialist</option>
+<option value="Gastrointestinal Surgeon">Gastrointestinal Surgeon</option>
+<option value="Endovascular Surgeon">Endovascular Surgeon</option>
+<option value="Interventional Radiologist">Interventional Radiologist</option>
+<option value="Forensic Pathologist">Forensic Pathologist</option>
+<option value="Microbiologist">Microbiologist</option>
+<option value="Pathologist">Pathologist</option>
+<option value="Pharmacologist">Pharmacologist</option>
+<option value="Toxicologist">Toxicologist</option>
+                    <!-- Add more hospitals as needed --> 
+                </select>
+            </div>
+
+            <!-- Submit -->
+            <button class="btsearch" type="submit">Search</button>
+
+        </form>
+    </div>
+
+</body>
