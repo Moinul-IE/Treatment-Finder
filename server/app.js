@@ -18,6 +18,21 @@ const bodyParser = require('body-parser');
 
 require('dotenv').config();
 const MONGO_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/treatment";
+
+
+async function connectDB() {
+    try {
+        await mongoose.connect(MONGO_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log("✅ MongoDB connected successfully!");
+    } catch (err) {
+        console.error("❌ MongoDB connection error:", err);
+        process.exit(1); // stop server if DB fails
+    }
+}
+connectDB();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));    // express find the views folder 
 app.use(express.urlencoded({extended: true}));
@@ -347,6 +362,7 @@ app.get('/searchbox', async (req, res) => {
                 { name: { $regex: query, $options: 'i' } }, // Search by name (case insensitive)
                 { specialist: { $regex: query, $options: 'i' } } // Search by specialist (case insensitive)
             ]
+
         });
 
         // Render the search results page and pass the results
