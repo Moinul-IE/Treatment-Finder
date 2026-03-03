@@ -54,7 +54,8 @@ app.use(session({
 
 app.use(flash());
 app.use(passport.initialize());
-passport.use(new LocalStrategy(Listing.authenticate()));
+// Use email as the username field for authentication
+passport.use(new LocalStrategy({ usernameField: 'email' }, Listing.authenticate()));
 
 //testing
 passport.serializeUser (Listing.serializeUser ());
@@ -79,11 +80,11 @@ app.use(express.static(path.join(__dirname, "public"))); // static file in publi
 app.engine("ejs", ejsMate);
 
 // connect with mongoose 
-main().then(() =>{
-    console.log("connection Successfull")
-}).catch((err) =>{
-    console.log(err);
-});
+// main().then(() =>{
+//     console.log("connection Successfull")
+// }).catch((err) =>{
+//     console.log(err);
+// });
 
 
 async function main(){
@@ -146,21 +147,27 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // register 
+// Register Doctor
 app.post('/registerDoctor', upload.single('image'), async (req, res) => {
     try {
-        const { 
-            name, 
-            description, 
-            specialist, 
-            division, 
-            location, 
-            email, 
-            password, 
-            booking_amount, // Extract booking_amount from req.body
-            booking // Extract booking from req.body
-        } = req.body;
+        // Debug logs
+        console.log('Incoming registerDoctor request body:', req.body);
+        console.log('Incoming registerDoctor file:', req.file);
 
-        // Create a new doctor user instance
+        const { name, description, specialist, division, location, email, password, booking_amount, booking } = req.body;
+
+        // Normalize booking amounts
+        const bookingNew = Number(booking_amount?.new) || 0;
+        const bookingOld = Number(booking_amount?.old) || 0;
+        const bookingNum = Number(booking) || 0;
+
+        if (!password) {
+            console.error('No password provided for new doctor registration');
+            req.flash('error_msg', 'Password is required');
+            return res.redirect('/registerDoctor');
+        }
+
+        // Create new doctor instance (without password)
         const newDoctor = new Listing({
             name,
             description,
@@ -168,25 +175,31 @@ app.post('/registerDoctor', upload.single('image'), async (req, res) => {
             division,
             location,
             email,
-            image: req.file ? req.file.path : undefined, // Use uploaded image path
+            image: req.file ? `/image/${req.file.filename}` : "/image/defaultimg.jpg",
             booking_amount: {
-                new: booking_amount.new, // Set new booking amount
-                old: booking_amount.old, // Set old booking amount
+                new: bookingNew,
+                old: bookingOld
             },
-            booking: booking // Set booking amount
+            booking: bookingNum
         });
 
-        // Register the user with passport-local-mongoose
-        await newDoctor.setPassword(password); // Assuming you are using passport-local-mongoose
+        // ✅ Use passport-local-mongoose register method
+        await Listing.register(newDoctor, password);
 
-        // Save the new doctor to the database
-        await newDoctor.save();
+        console.log('New doctor saved:', newDoctor._id);
+        req.flash('success_msg', 'Doctor registered successfully!');
+        res.redirect('/Doctor'); // Redirect to doctor list page
 
-        // Redirect or respond with success message
-        res.redirect('/Doctor'); // Redirect to the doctor listing page
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error registering doctor'); // Handle error appropriately
+
+        // Handle duplicate email gracefully
+        if (error.code === 11000 || error.name === 'MongoServerError') {
+            req.flash('error_msg', 'An account with that email already exists.');
+            return res.redirect('/registerDoctor');
+        }
+
+        res.status(500).send('Error registering doctor');
     }
 });
 // database testing perpose

@@ -59,7 +59,13 @@ const doctoruserSchema = new Schema({
     }
 });
 
-doctoruserSchema.plugin(passportLocalMongoose);
+// Use email as the username field for passport-local-mongoose so users authenticate with email
+
+doctoruserSchema.plugin(passportLocalMongoose, {
+    usernameField: 'email',
+    usernameUnique: false   // 👈 IMPORTANT
+});
+
 
 
 const Listing = mongoose.model("Listing", doctoruserSchema);
